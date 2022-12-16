@@ -32,7 +32,12 @@ function App() {
                   href="http://coinstock7.co.kr/image/?adcode=testbg"
                   target="_blank"
                 >
-                  <img src="http://coinstock7.co.kr/ns/imgs/co1.jpg" alt="" />
+                  <img
+                    src="
+
+https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co1.jpeg"
+                    alt=""
+                  />
                 </a>
               </p>
               <p>
@@ -52,7 +57,10 @@ function App() {
                   href="http://coinstock7.co.kr/image/?adcode=testbg"
                   target="_blank"
                 >
-                  <img src="http://coinstock7.co.kr/ns/imgs/co2.jpg" alt="" />
+                  <img
+                    src="tps://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co2.jpeg"
+                    alt=""
+                  />
                 </a>
               </p>
               <div class="imgdesc">[김수진씨의 최근 수익 인증]</div>
@@ -80,7 +88,10 @@ function App() {
                   href="http://coinstock7.co.kr/image/?adcode=testbg"
                   target="_blank"
                 >
-                  <img src="http://coinstock7.co.kr/ns/imgs/co3.jpg" alt="" />
+                  <img
+                    src="https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co3.jpeg"
+                    alt=""
+                  />
                 </a>
               </p>
               <p>
@@ -112,7 +123,7 @@ function App() {
                 <h3>내일 급등할 코인종목 받기</h3>
                 <ul>
                   <li id="line01">
-                    <img src="http://coinstock7.co.kr/ns/imgs/loading.gif" />
+                    <img src="https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/loading.gif" />
                   </li>
                   <li id="line02">
                     개인정보는 암호화하여 안전하게 처리됩니다.
