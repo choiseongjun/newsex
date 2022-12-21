@@ -1,7 +1,42 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import TelegramApi from "node-telegram-api";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [nickName, setNickName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  const getCustomer = () => {
+    axios.get("http://localhost:3000/users").then((res) => {
+      setUsers(res.data);
+    });
+  };
+
+  const submitEvent = (e) => {
+    e.preventDefault();
+    const TELEGRAM_TOKEN = "5964017003:AAH3LVmpPgezxLrs2-q53OLpYVdbCIybqjk";
+    const TELEGRAM_CHAT_ID = -1001643618319; // your telegram chat ID
+    const telegramApi = new TelegramApi(TELEGRAM_TOKEN);
+    telegramApi.sendMessage(TELEGRAM_CHAT_ID, "테스트 메시지입니다.11");
+
+    // console.log("as");
+    // var customer = {};
+    // customer.nickName = nickName;
+    // customer.phoneNumber = phoneNumber;
+
+    // axios.post("http://localhost:3000/users", customer).then((res) => {
+    //   alert("등록을 성공했습니다.");
+    //   getCustomer();
+    // });
+  };
+
+  useEffect(() => {
+    getCustomer();
+  }, []);
+
   return (
     <div>
       <div className="nav">
@@ -139,6 +174,8 @@ https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co1.j
                       name="user_name"
                       required=""
                       placeholder="이름을 입력하세요"
+                      value={nickName}
+                      onChange={(e) => setNickName(e.target.value)}
                     />
                   </li>
                   <li>
@@ -148,6 +185,8 @@ https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co1.j
                       name="user_name"
                       required=""
                       placeholder="연락처를 입력하세요"
+                      value={phoneNumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                   </li>
                   <br />
@@ -194,9 +233,18 @@ https://codedeploylightsail-matchingapp-bn.s3.ap-northeast-2.amazonaws.com/co1.j
                       id="btn"
                       type="submit"
                       value="급등코인 무료추천 이벤트 신청하기"
+                      onClick={submitEvent}
                     />
                   </li>
                 </ul>
+              </div>
+              <div>
+                {users.map((user, idx) => (
+                  <div key={idx} style={{ display: "flex" }}>
+                    <div>{user.nickName}</div>
+                    <div>{user.phoneNumber}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
